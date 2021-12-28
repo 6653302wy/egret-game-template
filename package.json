@@ -8,6 +8,7 @@
     "tsc_build_watch": "npm run tsc_build -- -w",
     "pack": "npm run clean && npm run tsc_build && webpack --config config/webpack.config.js",
     "server": "cross-env PROJECT_BUILD_ENV=dev webpack serve --progress --config config/webpack.config.js",
+    "dev": "npm run clean && npm run tsc_build && npm run server",
     "start": "npm run clean && npm run tsc_build && npm run server & npm run tsc_build_watch",
     "build": "cross-env PROJECT_BUILD_ENV=prd npm run pack"
   },
