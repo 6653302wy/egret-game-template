@@ -49,13 +49,13 @@ module.exports = {
             'whatwg-fetch',
             resolve('node_modules/proxy-polyfill'),
         ],
-        libs:[
-            resolve('libs/modules/egret/egret.js'),
-            resolve('libs/modules/egret/egret.web.js'),
-            resolve('libs/modules/game/game.js'),
-            resolve('libs/modules/tween/tween.js'),
-            resolve('libs/modules/assetsmanager/assetsmanager.js')
-        ],
+        // libs:[
+        //     resolve('libs/modules/egret/egret.js'),
+        //     resolve('libs/modules/egret/egret.web.js'),
+        //     resolve('libs/modules/game/game.js'),
+        //     resolve('libs/modules/tween/tween.js'),
+        //     resolve('libs/modules/assetsmanager/assetsmanager.js')
+        // ],
         bundle: resolve("tsc_outputs/Main.js"),
     },
     output: {
@@ -67,7 +67,7 @@ module.exports = {
         minimizer,
     },
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js"],
     },
     module:{
         rules:[
@@ -97,17 +97,11 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            // chunks: ['polyfill', 'libs', 'bundle'],
-            // inject: 'head'
+            chunks: ['polyfill', 'bundle'],
+            inject: 'head',
             template: resolve('index.html'),
             filename: 'index.html',
-            title: 'egret game',
         }),
         new CleanWebpackPlugin(),
-        // new webpack.SourceMapDevToolPlugin({
-        //     filename: isPrd ?'[name].[contenthash:8].js.map' : '[name].js.map',
-        //     // exclude: ['polyfill.js','libs.js'],
-        //     include: ['bundle.js'],
-        // })
     ]
 }

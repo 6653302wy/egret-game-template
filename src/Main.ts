@@ -31,7 +31,7 @@ import { LoadingUI } from "./LoadingUI";
 
 export class Main extends egret.DisplayObjectContainer {
   public constructor() {
-    console.log("egret game main constructor: !!!!ssss ");
+    console.log("egret game main constructor: !! ");
     super();
     this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
   }
@@ -173,6 +173,5 @@ export class Main extends egret.DisplayObjectContainer {
     change();
   }
 }
-
 egret.registerClass(Main, "Main");
 window["Main"] = Main;

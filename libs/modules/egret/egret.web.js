@@ -10213,4 +10213,3 @@ var egret;
         __reflect(EgretShaderLib.prototype, "egret.web.EgretShaderLib");
     })(web = egret.web || (egret.web = {}));
 })(egret || (egret = {}));
-;
