@@ -1,0 +1,4 @@
+.wing
+node_modules
+tsc_outputs
+bin-debug/outputs
