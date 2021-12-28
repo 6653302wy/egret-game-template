@@ -54,7 +54,7 @@ module.exports = {
             resolve('libs/modules/egret/egret.web.js'),
             resolve('libs/modules/game/game.js'),
             resolve('libs/modules/tween/tween.js'),
-            resolve('libs/modules/assetsmanager/assetsmanager.js'),
+            resolve('libs/modules/assetsmanager/assetsmanager.js')
         ],
         bundle: resolve("tsc_outputs/Main.js"),
     },
@@ -97,11 +97,11 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            chunks: ['polyfill', 'libs', 'bundle'],
+            // chunks: ['polyfill', 'libs', 'bundle'],
+            // inject: 'head'
             template: resolve('index.html'),
             filename: 'index.html',
             title: 'egret game',
-            inject: true
         }),
         new CleanWebpackPlugin(),
         // new webpack.SourceMapDevToolPlugin({

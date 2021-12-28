@@ -16,13 +16,20 @@
       html,
       body {
         -ms-touch-action: none;
-        background: #888888;
+        background: #423131;
         padding: 0;
         border: 0;
         margin: 0;
         height: 100%;
       }
     </style>
+    <script src="libs/modules/egret/egret.js"></script>
+    <script src="libs/modules/egret/egret.web.js"></script>
+    <script src="libs/modules/game/game.js"></script>
+    <script src="libs/modules/tween/tween.js"></script>
+    <script src="libs/modules/assetsmanager/assetsmanager.js"></script>
+    <script src="libs/modules/promise/promise.js"></script>
+    <script src="bundle.js"></script>
   </head>
 
   <body>
@@ -87,22 +94,26 @@
        * "calculateCanvasScaleFactor": //a function return canvas scale factor
        * }
        **/
-      egret.runEgret({
-        renderMode: "webgl",
-        audioType: 0,
-        calculateCanvasScaleFactor: function (context) {
-          var backingStore =
-            context.backingStorePixelRatio ||
-            context.webkitBackingStorePixelRatio ||
-            context.mozBackingStorePixelRatio ||
-            context.msBackingStorePixelRatio ||
-            context.oBackingStorePixelRatio ||
-            context.backingStorePixelRatio ||
-            1;
-          return (window.devicePixelRatio || 1) / backingStore;
-        },
-        pro: false,
-      });
+
+      window.onload = function () {
+        console.log("window.onload~~~~~~~");
+        egret.runEgret({
+          renderMode: "webgl",
+          audioType: 0,
+          calculateCanvasScaleFactor: function (context) {
+            var backingStore =
+              context.backingStorePixelRatio ||
+              context.webkitBackingStorePixelRatio ||
+              context.mozBackingStorePixelRatio ||
+              context.msBackingStorePixelRatio ||
+              context.oBackingStorePixelRatio ||
+              context.backingStorePixelRatio ||
+              1;
+            return (window.devicePixelRatio || 1) / backingStore;
+          },
+          pro: false,
+        });
+      };
     </script>
   </body>
 </html>
