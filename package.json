@@ -6,6 +6,7 @@
     "clean": "rm -rf tsc_outputs",
     "tsc_build": "./node_modules/.bin/tsc",
     "tsc_build_watch": "npm run tsc_build -- -w",
+    "pack_unclean": "npm run tsc_build && webpack --config config/webpack.config.js",
     "pack": "npm run clean && npm run tsc_build && webpack --config config/webpack.config.js",
     "server": "cross-env PROJECT_BUILD_ENV=dev webpack serve --progress --config config/webpack.config.js",
     "dev": "npm run clean && npm run tsc_build && npm run server",
